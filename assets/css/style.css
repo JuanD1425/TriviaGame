@@ -1,0 +1,37 @@
+.answers:hover {
+  color: #ffffff;
+  background-color: #0c1975;
+}
+
+#whole {
+  background-color: #8350B3;
+  color: #ffffff;
+}
+
+.list-group {
+  background-color: #462466;
+}
+
+#top-row, #txt-row {
+  background-color: #462466;
+}
+
+#list-group {
+  background-color: #8350B3;
+}
+
+#resultsRow {
+  background-color: #000000;
+}
+
+#questionNumberRow {
+  background-color: #000000;
+}
+
+#tally-text {
+  background-color: #462466;
+}
+
+#row {
+  background-color: #000000;
+}

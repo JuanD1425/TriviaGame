@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>TriviaGame</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body id="whole">
+  <div class="container">
+    <div class="row" id="top-row">
+      <div class="col text-center">
+        <h5>Time Remaining</h5>
+        <div id="countdownExample">
+          <h4 class="values"></h4>
+        </div>
+      </div>
+      <div class="col text-center">
+        <h1 class="border rounded">Trivia Game</h1>
+      </div>
+      <div class="col text-center">
+        <h5>Question&nbsp;</h5>
+        <h1><span class="questionNumber">1</span>/<span id="questionTotal">5</span></h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h4><span>Category</span>&nbsp;: &nbsp;<span id="questionCategory">Computer Science</span></h4>
+      </div>
+    </div>
+    <div class="row" id="questionNumberRow">
+      <div class="col">
+        <h2 class="text-center"><span>Question&nbsp;</span><span class="questionNumber">1</span></h2>
+      </div>
+    </div>
+    <div class="row" id="txt-row">
+      <div class="col-10 offset-1 text-center">
+        <h4 class="text-center" id="questionText">Question goes here?</h4>
+      </div>
+    </div>
+    <div class="row" id="row">
+      <div class="col-8 offset-2 text-center" style="background-color: #000000;">
+        <ul class="list-group">
+          <li class="list-group-item" id="list-group"><span id="a1" class="answers">Answer 1</span></li>
+          <li class="list-group-item" id="list-group"><span id="a2" class="answers">Answer 2</span></li>
+          <li class="list-group-item" id="list-group"><span id="a3" class="answers">Answer 3</span></li>
+          <li class="list-group-item" id="list-group"><span id="a4" class="answers">Answer 4</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row" id="resultsRow">
+      <div class="col text-center">
+        <h4 id="quizResult">Result</h4>
+      </div>
+    </div>
+    <div class="row" id="tallyRow">
+      <div class="col text-center">
+        <ul class="list-group">
+          <li class="list-group-item" id="tally-text">
+            <h5>Correct</h5>
+          </li>
+          <li class="list-group-item" id="tally-text">
+            <h5 id="correct">0</h5>
+          </li>
+        </ul>
+      </div>
+      <div class="col text-center">
+        <ul class="list-group">
+          <li class="list-group-item" id="tally-text">
+            <h5>Wrong</h5>
+          </li>
+          <li class="list-group-item" id="tally-text">
+            <h5 id="wrong">0</h5>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row" id="tallyRow">
+      <div id="countdownExample2">
+        <h3 class="values2 center-text"></h3>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/easytimer@1.1.1/src/easytimer.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+
+</html>
