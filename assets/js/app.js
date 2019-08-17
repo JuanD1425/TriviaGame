@@ -34,16 +34,23 @@ function restart () {
   }
 
   var timer = new Timer();
-  timer.start({countdown: true, startValues: {minutes: 1, seconds: 00}});
+  timer.start({countdown: true, startValues: {minutes: 0, seconds: 15}});
   $('#countdownExample .values').html(timer.getTimeValues().toString());
   timer.addEventListener('secondsUpdated', function (e) {
       $('#countdownExample .values').html(timer.getTimeValues().toString());
   });
   timer.addEventListener('targetAchieved', function (e) {
+    close();
     $("#quizResult").text("Time has run out!")
     $("#row").hide("fast","linear");
     $("#questionText").hide("fast","linear");
   });
+
+function close () {
+  $(".tt").hide("fast","linear");
+  $("#old").hide("fast","linear");
+  $("#new").show("fast","linear");
+}
 
 function order () {
   while (answers.length < 4) {
@@ -51,10 +58,11 @@ function order () {
   if (answers.indexOf(num) < 0) {
     answers.push(num);
   }}};
-
-order();
-setQuiz(c);
 console.log(answers);
+order();
+console.log(answers);
+setQuiz(c);
+console.log(answers.length);
 $(".answers").on("click", function () {
   var r = $(this).text();
   if (r == correctChoice) {
@@ -63,7 +71,7 @@ $(".answers").on("click", function () {
       $("#correct").text(correct);
       $("#row").hide("fast","linear");
       $("#questionText").hide("fast","linear");
-    } else {
+    } else  {
       results = "You are Wrong! It was " + correctChoice;
       wrong++
       $("#wrong").text(wrong);
@@ -71,6 +79,7 @@ $(".answers").on("click", function () {
       $("#questionText").hide("fast","linear");
     }
       $("#quizResult").text(results);
+      $("#countdownExample2").show("fast","linear");
       var timer2 = new Timer();
       timer2.start({countdown: true, startValues: {seconds: 3}});
       timer.stop();
@@ -85,6 +94,17 @@ $(".answers").on("click", function () {
           $('#countdownExample2 .values2').html(timer2.getTimeValues().toString());
       });
       timer2.addEventListener('targetAchieved', function (e) {
+        $("#countdownExample2").hide("fast","linear");
+        if ((correct + wrong) == choices.length) {
+          close();
+          results = "Correct: " + correct + "               Wrong: " + wrong;
+          $("#quizResult").text(results);
+          $("#row").hide("fast","linear");
+          $("#questionText").hide("fast","linear");
+          c = 0;
+          wrong = 0;
+          correct = 0;
+        } else{
         $("#row").show("fast","linear");
         $("#questionText").show("fast","linear");
         restart();
@@ -93,7 +113,9 @@ $(".answers").on("click", function () {
         timer.addEventListener('secondsUpdated', function (e) {
             $('#countdownExample .values').html(timer.getTimeValues().toString());
         });
+      }
         timer.addEventListener('targetAchieved', function (e) {
+          close()
           $("#quizResult").text("Time has run out!")
           $("#row").hide("fast","linear");
           $("#questionText").hide("fast","linear");
@@ -101,6 +123,5 @@ $(".answers").on("click", function () {
           c = 0;
           setQuiz(c);
         });
-
+})
   });
-});

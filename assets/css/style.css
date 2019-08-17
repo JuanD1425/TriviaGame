@@ -35,3 +35,11 @@
 #row {
   background-color: #000000;
 }
+
+#new{
+  display: none;
+}
+
+#countdownExample2{
+  display: none;
+}
